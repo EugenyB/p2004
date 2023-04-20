@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="D:/IdeaProjects/qa3/p2004" enabled="false">
+        <classes>
+            <class name="main.ConverterTest">
+                <methods>
+                    <include name="testTime"/>
+                    <include name="testConvertCelsiusToFahrenheit"/>
+                    <include name="testCheckCelsiusFalse"/>
+                    <include name="testConverterCelsiusToFahrenheitException"/>
+                    <include name="testConvertCelsiusToFahrenheitExceptionMessage"/>
+                    <include name="testParamsConvert"/>
+                    <include name="testConvertFahrenheitToCelsius"/>
+                    <include name="testConvertFahrenheitToCelsiusVersion2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="TestWithParam" enabled="false">
+        <parameter name="celsius" value="10.0"/>
+        <parameter name="expectedFahrenheit" value="50.0"/>
+        <classes>
+            <class name="main.ConverterTest">
+                <methods>
+                    <include name="testConvertWithParam"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="TestWithDataProviderClass" enabled="false">
+        <classes>
+            <class name="main.ConverterTest">
+                <methods>
+                    <include name="testConvertCelsiusArray"/>
+                    <include name="testConvertCelsiusIterator"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="TestWithGroups" enabled="false">
+        <groups>
+            <run>
+                <include name="convert"/>
+<!--                <include name="check"/>-->
+            </run>
+        </groups>
+        <classes>
+            <class name="main.ConverterTest"/>
+        </classes>
+    </test>
+    <test name = "Test Group_Main">
+        <groups>
+            <run>
+                <include name="base_flow"/>
+            </run>
+        </groups>
+        <classes>
+<!--            <class name="main.action.ConverterPriorTest"/>-->
+            <class name="main.DataParserTest"/>
+            <class name="main.DataReaderTest"/>
+        </classes>
+    </test>
+</suite>
